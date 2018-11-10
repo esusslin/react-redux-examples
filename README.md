@@ -6,40 +6,38 @@
 
 Simple + return JSX
 
-#### App.js
-
-Wrapper - first component for bootstrapping application. Unneccesary if working with router directly in index.js
-
-#### Class Components
+### Class Components
 
 Intelligent
 
 - can handle state
 - can host class methods
 
-#### Containers
+### Containers
 
 Components wired up to host state as props - very flexible on how to organize components vs containers.
 
-#### LifeCycle Methods
+### LifeCycle Methods
 
 Get called automatically immediately **after** component renders in the DOM.
 
-**componentDidMount** fires as component renders
+- componentDidMount fires as component renders
 
-**componentWillMount** fires before component redners
+- componentWillMount fires before component redners
 
-IE: **componentDidMount** Firing all actions at the birth of a component instance
+- gets triggered with any change to state
 
-#### render()
+### Lodash
 
-gets triggered with any change to state
+Ducks hard. Slick data manipulation.
 
-### Redux
+**RULE**: when pulling down arrays it is always best to convert to large objects to easily move around state (vs a ducking array). **\_.mapKeys** does just that.
+
+## Redux
 
 Delivers state to the React code
 
-#### Reducers
+### Reducers
 
 More like 'deliverers'..
 
@@ -47,17 +45,17 @@ Delivers state data, connected to containers via mapStateToProps().
 
 Named according to what it delivers.
 
-#### Actions
+### Actions
 
 Simple function which set state, connected to containers via mapDispatchToProps() + bindActionCreators.
 
 Passed around components (like guns to fire) as piece of state via mapDispatchToProps() + bindActionCreators.
 
-### Middleware
+## Middleware
 
 Filters the actions getting passed to reducer. Gatekeeper functions which filter large payloads into data -> state.
 
-#### Redux Promise
+### Redux Promise
 
 foxing with asynchronous API calls? how bout [Redux Promise](https://www.npmjs.com/package/redux-promise)
 
@@ -69,7 +67,7 @@ It filters HTTP response data into state.
 
 Simple way to feed asynchronous retrieved data into app state cleanly.
 
-#### React Router DOM
+### React Router DOM
 
 multiple pages? how bout [Redux Router Dom](https://www.npmjs.com/package/react-router-dom#installation)
 
@@ -81,17 +79,17 @@ Rather, it informs React which components to render instead, which are [Single P
 
 React router should directly inform state (in a blog = active post, posts, etc)
 
-#### Switch: React Router
+### Switch: React Router
 
 One route at a time! Switch takes in multiple routes and returns the **first match**, so it is important that the routes are ordered top to bottom, leaving "/" home at the bottom.
 
-#### Match Params!: React Router
+### Match Params!: React Router
 
 **MAGIC ALERT**
 
 Slick ability to set **/:id** in the route and pull that value into the component props with **this.props.match.params**
 
-#### OwnProps
+### OwnProps
 
 Allows small component to filter larger set of state props to identify the one needed
 
@@ -99,7 +97,7 @@ ownProps = this.props[this.props.match.params.id]
 
 Syntactic magic for simplicity.
 
-#### Redux Form
+### Redux Form
 
 Need forms? a lot of User input? How bout [Redux Form](https://redux-form.com/7.4.2/)
 
@@ -111,8 +109,6 @@ Essentially creates a Postman object out of validated form input.
 
 Save us from creating an action creator for each ducking input ---> simplifies the reducer delivery to state.
 
-#### Lodash
+### Thunk
 
-Ducks hard. Slick data manipulation.
-
-**RULE**: when pulling down arrays it is always best to convert to large objects to easily move around state (vs a ducking array). **\_.mapKeys** does just that.
+Handles multiple asynchronous actions smoothly.
