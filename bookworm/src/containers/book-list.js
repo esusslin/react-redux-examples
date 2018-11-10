@@ -31,7 +31,7 @@ function mapStateToProps(state) {
   };
 }
 
-// Whatever is returned from this funciton will end up as props
+// Whatever is returned from this function will end up as props
 // on the BookList container
 function mapDispatchToProps(dispatch) {
   //Whenever selectBook is called, the result should be passed
