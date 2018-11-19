@@ -2,7 +2,7 @@
 
 A simple front end application built with React &amp; Bootstrap CSS
 
-##To run:
+## To run:
 
 1. Download [Node.js](https://nodejs.org/en/download/)
 
